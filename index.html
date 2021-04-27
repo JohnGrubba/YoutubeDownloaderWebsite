@@ -120,7 +120,6 @@
 
     <script>
     function start() {
-      document.getElementById("h").innerHTML = "Generating Download Link...";
       url = document.getElementById("url").value;
       bypass(url);
     }
@@ -141,13 +140,12 @@
 
       xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("h").href = xmlhttp.responseText;
           console.log(xmlhttp.responseText);
           if(xmlhttp.responseText == "Couldn't generate a Download Link for this Video!"){
             document.getElementById("h").innerHTML = "Couldn't generate a Download Link!";
             return;
           }
-          document.getElementById("h").innerHTML = "Click me to download!";
+          window.open(xmlhttp.responseText)
         }
       }
 			xmlhttp.open("GET", url, false);
