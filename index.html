@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1057268671673705"
-     crossorigin="anonymous"></script>
     <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
       <meta name="hilltopads-site-verification" content="5d318cc49a6bd0e5cf5d363dc38ad71d578d6103" />
   </head>
@@ -121,6 +119,27 @@
     </center>
 
     <script>
+    xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onerror = function() {
+      alert("API is currently Offline! Please try again later!");
+    }
+
+    xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+          if(xmlhttp.responseText == "UP"){
+            console.log("API is ONLINE!")
+          }
+          else{
+            alert("API is currently Offline! Please try again later!");
+          }
+        }
+      }
+
+    var url = "https://YoutubeDownloaderAPI.jjtv.repl.co"
+    xmlhttp.open("GET", url, true);
+		xmlhttp.send(null);
+
     function start() {
       url = document.getElementById("url").value;
       bypass(url);
