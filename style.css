@@ -15,6 +15,7 @@ button{
     text-align: center;
     min-width: 30%;
     transition-duration: 0.5s;
+    cursor: default;
 }
 button:hover{
     background-color: #ccc;
@@ -23,11 +24,15 @@ button:hover{
 button:disabled{
     background-color: #ccc;
     transition-duration: 0.5s;
+    cursor: wait;
 }
 a{
     text-decoration: none;
     color: #000;
     font-size: large;
+}
+a:hover{
+    text-decoration: underline;
 }
 list#formats{
     list-style-type: none;
