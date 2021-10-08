@@ -17,10 +17,10 @@ function download(){
                 out = ""
                 for(i = 0; i < response.length; i++){
                     if(response[i].type == "audio"){
-                        out += "<li><a href='" + response[i].dl_link + "'><i class='fas fa-volume-up'></i> "+response[i].ext+"</a></li>"
+                        out += "<li><a href='" + response[i].dl_link + "' target='_blank'><i class='fas fa-volume-up'></i> "+response[i].ext+"</a></li>"
                     }
                     else{
-                        out += "<li><a href='" + response[i].dl_link + "'><i class='fas fa-video'></i> "+response[i].quality+", "+response[i].fps+"fps, "+response[i].ext+"</a></li>"
+                        out += "<li><a href='" + response[i].dl_link + "' target='_blank'><i class='fas fa-video'></i> "+response[i].quality+", "+response[i].fps+"fps, "+response[i].ext+"</a></li>"
                     }
                 }
                 list.innerHTML = out
