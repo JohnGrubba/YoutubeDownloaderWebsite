@@ -1,177 +1,20 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-      <meta name="hilltopads-site-verification" content="5d318cc49a6bd0e5cf5d363dc38ad71d578d6103" />
-  </head>
-  <body></body>
-</html>
-
-<html>
-  <head>
-    <style>
-      * {
-        font-family: "Roboto", sans-serif;
-        color: rgb(255, 255, 255)
-      }
-      #password {
-        width: 200px;
-        height: 30px;
-        background: #FEFAC0;
-        border: 1px solid grey;
-        border-radius: 2px;
-        cursor: pointer;
-        padding: 10px;
-      }
-
-      a {
-        font-family: "Roboto", sans-serif;
-        font-size: 20px;
-        color: rgb(0, 0, 0);
-      }
-
-      a:hover {
-        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
-        font-family: "Roboto", sans-serif;
-        text-shadow: 0 2px 2px rgba(0, 0, 0, 1);
-        transition: 0.1s;
-        font-size: 25px;
-      }
-    </style>
-    <link rel="stylesheet" href="./particles.css" />
+    <title>YT Downloader by JJTV</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   </head>
 
-  <body>
-    <div class="page-bg"></div>
-
-    <div class="animation-wrapper">
-      <div class="particle particle-1"></div>
-      <div class="particle particle-2"></div>
-      <div class="particle particle-3"></div>
-      <div class="particle particle-4"></div>
-    </div>
-  </body>
-</html>
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='shortcut icon' type="image/png" href='favicon.png'/>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./textbox.css">
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      input,
-      button {
-        font-size: 30px;
-      }
-
-      .html {
-        font-family: "Roboto", sans-serif;
-      }
-      .container {
-        font-family: "Roboto", sans-serif;
-        left: 0;
-        margin-top: -100px;
-        position: absolute;
-        text-align: center;
-        top: 50%;
-        width: 100%;
-      }
-      div.fixed {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 200px;
-      }
-    </style>
-    <title>Youtube Downloader by JJTV</title>
-  </head>
   <body>
     <center>
-      <div class="container">
-        <h1>Youtube Downloader by JJTV</h1>
-        <h4>
-          <input id="myCheck" type="checkbox">Audio only?</input>
-        </h4>
-        <br />
-        <h5>
-        </h5>
-
-        <input type="text" placeholder="Enter URL" id="url" style="color:black"/>&nbsp&nbsp
-        
-        
-        <a href="#0" id="button" class="bttn-dark">Download</a>
-        <a id="h" download="video.mp4" href="#">.</a>
-        <a href="#" id="ad"></a>
-      </div>
-
+      <h1>YT Downloader by JJTV</h1>
+      <a>Youtube Video Link </a>
+      <br><br>
+      <input id="yt-link">
+      <br><br>
+      <button onclick="download()">Download</button>
+      <list id="formats"></list>
     </center>
-
-    <script>
-    xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.onerror = function() {
-      alert("API is currently Offline! Please try again later!");
-    }
-
-    xmlhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-          if(xmlhttp.responseText == "UP"){
-            console.log("API is ONLINE!")
-          }
-          else{
-            alert("API is currently Offline! Please try again later!");
-          }
-        }
-      }
-
-    var url = "https://YoutubeDownloaderAPI.jjtv.repl.co"
-    xmlhttp.open("GET", url, true);
-		xmlhttp.send(null);
-
-    function start() {
-      url = document.getElementById("url").value;
-      bypass(url);
-    }
-
-    document.getElementById("button").addEventListener("click", start);
-
-    function bypass(url) {
-      code = json = encodeURIComponent(btoa(JSON.stringify(url)));
-      xmlhttp = new XMLHttpRequest();
-      var checkBox = document.getElementById("myCheck");
-      var url = "";
-      if (checkBox.checked == true){
-        url = "https://youtubedownloaderapi.jjtv.repl.co/mp3/"+code;
-      } else{
-        url = "https://youtubedownloaderapi.jjtv.repl.co/mp4/"+code;
-      }
-      
-
-      xmlhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-          console.log(xmlhttp.responseText);
-          if(xmlhttp.responseText == "Couldn't generate a Download Link for this Video!"){
-            document.getElementById("h").innerHTML = "Couldn't generate a Download Link!";
-            return;
-          }
-          window.open(xmlhttp.responseText)
-        }
-      }
-			xmlhttp.open("GET", url, false);
-			xmlhttp.send(null);
-    }
-    </script>
   </body>
 </html>
