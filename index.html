@@ -12,9 +12,16 @@
       <h1>YT Downloader by JJTV</h1>
       <a href="https://youtubedll.tk/">Youtube Video Link </a>
       <br><br>
-      <input id="yt-link">
+      <input id="yt-link" placeholder="Please enter your Youtube Link">
       <br><br>
-      <button onclick="download()" id="start-button"><i class="fas fa-download"></i>  Download</button>
+      <button onclick="download()" id="start-button">
+        <div id="dl-text">
+          <i class="fas fa-download"></i>  Download
+        </div>
+        <div id="dl-bar" style="display: none;">
+          <progress id="prog" value="0" max="100">
+        </div>
+      </button>
       <!--Video Stuff-->
       <br><br>
       <div id="vid">
