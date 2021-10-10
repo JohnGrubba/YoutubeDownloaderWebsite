@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
     <link rel="icon" type="image/png" href="./favicon.png"/>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   </head>
 
@@ -14,7 +15,7 @@
       <br><br>
       <input id="yt-link" placeholder="Please enter your Youtube Link">
       <br><br>
-      <button onclick="download()" id="start-button">
+      <button id="start-button" class="g-recaptcha" data-sitekey="6LflwL8cAAAAANpW_IXsuxdwXv7YuoMfH1VGALYr" data-callback='onSubmit' data-action='submit'>
         <div id="dl-text">
           <i class="fas fa-download"></i>  Download
         </div>
