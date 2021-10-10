@@ -85,7 +85,7 @@ div#obj{
     border: 1px solid rgb(0, 0, 0);
 }
 div#vid{
-    min-width: 30%;
+    min-width: 40%;
     width: max-content;
 }
 div#dl-text{
